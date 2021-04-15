@@ -1,4 +1,5 @@
 import React from 'react'
+import './ImageList.css'
 
 const ImageList = (props) => {
     // maps over images array(props) and returns src link
@@ -8,7 +9,7 @@ const ImageList = (props) => {
         return <img alt={description} key={id} src={urls.regular} />
     })
 
-    return <div>{images}</div>
+    return <div className="image-list">{images}</div>
 }
 
 export default ImageList

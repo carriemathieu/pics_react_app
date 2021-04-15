@@ -1,12 +1,13 @@
 import React from 'react'
 import './ImageList.css'
+import ImageCard from './ImageCard'
 
 const ImageList = (props) => {
     // maps over images array(props) and returns src link
-    // destructured image (instead of using image.desc, image.id, image.urls... etc)
-    const images = props.images.map(({description, id, urls}) => {
-        // each image is nested under "urls" / "regular" from API, key comes from results/id
-        return <img alt={description} key={id} src={urls.regular} />
+    
+    const images = props.images.map(image => {
+        // key comes from results/id
+        return <ImageCard image={image} key={image.id} />
     })
 
     return <div className="image-list">{images}</div>
